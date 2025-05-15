@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Visualizza Prenotazioni</title>
+</head>
+<body>
+    <h1>Prenotazioni</h1>
+    <table border="1">
+        <tr>
+            <th>Nome</th><th>Sport</th><th>Data</th><th>Ora</th><th>Note</th>
+        </tr>
+        {% for p in prenotazioni %}
+        <tr>
+            <td>{{ p['nome'] }}</td>
+            <td>{{ p['sport'] }}</td>
+            <td>{{ p['data'] }}</td>
+            <td>{{ p['ora'] }}</td>
+            <td>{{ p['note'] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="/">Torna alla home</a>
+</body>
+</html>

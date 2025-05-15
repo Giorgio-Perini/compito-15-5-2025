@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Cerca Prenotazioni</title>
+</head>
+<body>
+    <h1>Cerca Prenotazioni</h1>
+    <form method="post">
+        <label>Nome:
+            <input type="text" name="nome" required>
+        </label>
+        <input type="submit" value="Cerca">
+    </form>
+    {% if prenotazioni %}
+    <h2>Risultati</h2>
+    <table border="1">
+        <tr>
+            <th>Nome</th><th>Sport</th><th>Data</th><th>Ora</th><th>Note</th>
+        </tr>
+        {% for p in prenotazioni %}
+        <tr>
+            <td>{{ p['nome'] }}</td>
+            <td>{{ p['sport'] }}</td>
+            <td>{{ p['data'] }}</td>
+            <td>{{ p['ora'] }}</td>
+            <td>{{ p['note'] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% endif %}
+    {% if errore %}<p style="color:red">{{ errore }}</p>{% endif %}
+    <a href="/">Torna alla home</a>
+</body>
+</html>

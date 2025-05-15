@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Aggiungi Prenotazione</title>
+</head>
+<body>
+    <h1>Aggiungi Prenotazione</h1>
+    {% if errore %}<p style="color:red">{{ errore }}</p>{% endif %}
+    <form method="post">
+        <input type="text" name="nome" placeholder="Nome" required><br>
+        <select name="sport">
+            {% for s in sports %}
+            <option>{{ s }}</option>
+            {% endfor %}
+        </select><br>
+        <input type="date" name="data" required><br>
+        <input type="time" name="ora" required><br>
+        <input type="text" name="note" placeholder="Note"><br>
+        <button type="submit">Aggiungi</button>
+    </form>
+    <a href="/">Home</a>
+</body>
+</html>
